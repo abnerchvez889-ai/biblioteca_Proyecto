@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.LibroController" prefWidth="700" prefHeight="380">
+    <center>
+        <TableView fx:id="tablaLibros" prefHeight="260" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                <TableColumn fx:id="colTitulo" text="Título" prefWidth="320"/>
+                <TableColumn fx:id="colAutor" text="Autor" prefWidth="200"/>
+                <TableColumn fx:id="colDisponible" text="Disponible" prefWidth="80"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="8" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <TextField fx:id="txtTitulo" promptText="Título" prefWidth="300"/>
+            <TextField fx:id="txtAutor" promptText="Autor" prefWidth="180"/>
+            <Button text="Agregar" onAction="#agregarLibro"/>
+            <Button text="Editar" onAction="#editarLibro"/>
+            <Button text="Eliminar" onAction="#eliminarLibro"/>
+        </HBox>
+    </bottom>
+</BorderPane>

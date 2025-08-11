@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.PrestamoController" prefWidth="820" prefHeight="420">
+
+    <top>
+        <Label text="Prestamo de libros" style="-fx-font-size: 20px;" BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <TableView fx:id="tablaPrestamos" prefHeight="300" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colAlumno" text="Alumno" prefWidth="200"/>
+                <TableColumn fx:id="colLibro" text="Libro" prefWidth="250"/>
+                <TableColumn fx:id="colFechaPrestamo" text="Fecha Prestamo" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="8" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <ComboBox fx:id="cmbAlumno" promptText="Alumno" prefWidth="220"/>
+            <ComboBox fx:id="cmbLibro" promptText="Libro disponible" prefWidth="280"/>
+            <Button text="Agregar" onAction="#agregarPrestamo"/>
+            <Button text="Editar" onAction="#editarPrestamo"/>
+            <Button text="Eliminar" onAction="#eliminarPrestamo"/>
+        </HBox>
+    </bottom>
+</BorderPane>
